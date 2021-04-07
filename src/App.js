@@ -4,10 +4,14 @@ import HookCounter from './components/HookCounter';
 import HookCounterObj from './components/HookCounterObj';
 import HookCounterArr from './components/HookCounterArr';
 
+import ClassMouse from './components/ClassMouse';
+import HookMouse from './components/HookMouse';
+import MouseContainer from './components/MouseContainer';
+
 function App() {
   return (
     <div className="App">
-      <HookCounterArr />
+      <MouseContainer />
     </div>
   );
 }

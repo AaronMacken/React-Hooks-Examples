@@ -5,10 +5,25 @@ export class ClassCounter extends Component {
         super(props)
     
         this.state = {
-             count: 0
+             count: 0,
+             name: ''
         }
 
         this.incrementCount = this.incrementCount.bind(this);
+    }
+
+    componentDidMount() {
+        document.title = `Clicked ${this.state.count}`
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        // conditionally log if the count is getting updated
+        // (useEffect provides a shorter way of doing this)
+        if (prevState.count !== this.state.count) {
+            console.log('updating document title');
+        }
+    
+        document.title = `Clicked ${this.state.count}`
     }
 
     incrementCount() {
@@ -19,7 +34,16 @@ export class ClassCounter extends Component {
     
     render() {
         return (
-            <button onClick={this.incrementCount}>Count { this.state.count }</button>
+            <>  
+                <input 
+                    type="text"
+                    value={this.state.name}
+                    onChange={e => {
+                        this.setState({ name: e.target.value })
+                    }}
+                />
+                <button onClick={this.incrementCount}>Class Count { this.state.count }</button>
+            </>
         )
     }
 }
