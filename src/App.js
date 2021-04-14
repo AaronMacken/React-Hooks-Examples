@@ -18,6 +18,10 @@ import DataFetching from './components/DataFetching';
 import ComponentC from './components/context/ComponentC';
 import ComponentE from './components/context/ComponentE';
 
+import ReducerCounter from './components/ReducerCounter';
+import ReducerCounterTwo from './components/ReducerCounterTwo';
+import ReducerCounterThree from './components/ReducerCounterThree';
+
 export const UserContext = React.createContext();
 export const PreferencesContext = React.createContext();
 
@@ -26,7 +30,7 @@ function App() {
     <div className="App">
       <UserContext.Provider value={'Aaron'}>
         <PreferencesContext.Provider value={'Coffee'}>
-          <ComponentE />
+          <ReducerCounterThree />
         </PreferencesContext.Provider>
       </UserContext.Provider>
     </div>
