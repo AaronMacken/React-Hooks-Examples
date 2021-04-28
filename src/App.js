@@ -34,6 +34,7 @@ export const PreferencesContext = React.createContext();
 export const CountContext = React.createContext();
 
 const initialState = 0;
+
 const reducer = (state, action) => {
     switch(action) {
         case 'increment':
